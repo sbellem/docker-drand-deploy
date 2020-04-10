@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  nginx:
+    image: nginx
+    ports:
+      - '8888:443'
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./.letsencrypt:/etc/letsencrypt
+  drand:
+    image: drandorg/go-drand:latest
+    volumes:
+      - ./.drand:/root/.drand
+    ports:
+      - "0.0.0.0:8080:8080"
+    entrypoint: drand
+    command: start --verbose --tls-disable --listen 0.0.0.0:8080
+    restart: always
