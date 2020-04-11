@@ -64,7 +64,7 @@ server {
     listen              443 ssl http2;
     server_name         <server_name>
 
-	# all grpc calls
+    # all grpc calls
     location / {
         grpc_pass grpc://drand:8080;
     }
@@ -99,7 +99,7 @@ server {
     listen              443 ssl http2;
     server_name         drand.spring.joy;
 
-	# all grpc calls
+    # all grpc calls
     location / {
         grpc_pass grpc://drand:8080;
     }
