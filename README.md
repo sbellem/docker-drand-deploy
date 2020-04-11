@@ -94,7 +94,7 @@ under
 and, assuming one uses the `docker-compose.yml` as is, then the config would
 be somewhat similar to:
 
-```conf
+```nginx
 server {
     listen              443 ssl http2;
     server_name         drand.spring.joy;
