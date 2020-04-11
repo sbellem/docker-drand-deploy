@@ -62,7 +62,7 @@ Create an nginx server configuration file under
 ```nginx
 server {
     listen              443 ssl http2;
-    server_name         <server_name>
+    server_name         <server_name>;
 
     # all grpc calls
     location / {
