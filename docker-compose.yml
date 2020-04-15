@@ -13,8 +13,6 @@ services:
     image: drandorg/go-drand:latest
     volumes:
       - ./.drand:/root/.drand
-    ports:
-      - "0.0.0.0:8080:8080"
     entrypoint: /drand
     command: start --verbose --tls-disable --listen 0.0.0.0:8080
     restart: always
